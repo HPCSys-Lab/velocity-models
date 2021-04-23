@@ -52,7 +52,7 @@ def read_model(filename):
 filename = "overthrust_3D_true_model.h5"
 
 data = read_model(filename)
-print(data.shape)
+print("Shape do modelo "+filename, data.shape)
 
 plot_velocity_model (data[:,:,500], file_name="slice_dim3",show=True)
 plot_velocity_model (data[:,400,:], file_name="slice_dim2",show=True)
@@ -61,6 +61,7 @@ plot_velocity_model (data[100,:,:], file_name="slice_dim1",show=True)
 filename = "reduced_overthrust_3D_true_model.h5"
 
 data = read_model(filename)
+print(data.shape)
 
 plot_velocity_model (data[:,:,0], file_name="slice_dim3_cut",show=True)
 plot_velocity_model (data[:,250,:], file_name="slice_dim2_cut",show=True)
