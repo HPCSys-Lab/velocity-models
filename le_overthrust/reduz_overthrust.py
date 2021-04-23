@@ -30,7 +30,6 @@ def reduce_model(infilename,outfilename):
 #reduce_model("overthrust_3D_true_model.h5","reduced_overthrust_3D_true_model.h5")
 
 infilename="overthrust_3D_true_model.h5"
-outfilename="reduced_overthrust_3D_true_model.h5"
 
 with h5py.File(infilename, 'r') as infile:
     print("Input: ",infilename)
@@ -43,6 +42,7 @@ with h5py.File(infilename, 'r') as infile:
     in_o = infile['o'][()]
     in_d = infile['d'][()]
     in_copytight = infile['copyright'][()]
+
     z0 = 0
     z1 = 201
     x0 = 50
@@ -55,6 +55,7 @@ with h5py.File(infilename, 'r') as infile:
     out_o = in_o
     out_d = in_d
     out_copytight = in_copytight
+    outfilename="reduced_overthrust_3D_true_model.h5"
 
     with h5py.File(outfilename, 'w') as outfile:
         outfile.create_dataset('m', data=out_m)
